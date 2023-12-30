@@ -27,6 +27,7 @@ export default defineNuxtConfig({
     '@pinia-plugin-persistedstate/nuxt',
     '@vueuse/nuxt',
     '@nuxt/content',
+    '@nuxthq/studio',
   ],
   vite: {
     ssr: {
@@ -49,5 +50,8 @@ export default defineNuxtConfig({
   },
   pinia: {
     storesDirs: ['./stores/**']
+  },
+  studio: {
+    enabled: true,
   }
 })
