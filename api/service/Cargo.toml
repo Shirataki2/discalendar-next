@@ -1,0 +1,11 @@
+[package]
+name = "service"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+sea-orm = { version = "0.12.10", features = ["sqlx-postgres", "runtime-tokio-native-tls", "macros", "with-chrono", "with-uuid", "postgres-array", "with-bigdecimal"] }
+entity = { path = "../entity" }
+poise = "0.5.7"

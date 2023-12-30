@@ -1,0 +1,28 @@
+[package]
+name = "api"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+members = [".", "migration", "entity", "service"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-session = { version = "0.8.0", features = ["cookie-session", "redis-actor-session"] }
+actix-web = "4.4.0"
+anyhow = "1.0.75"
+base64 = "0.21.5"
+dotenv = "0.15.0"
+entity = { path = "entity" }
+getset = "0.1.2"
+log = "0.4.20"
+oauth2 = "4.4.2"
+poise = "0.5.7"
+pretty_env_logger = "0.5.0"
+reqwest = { version = "0.11.23", features = ["gzip", "json", "cookies"] }
+sentry = "0.32.1"
+sentry-log = "0.32.1"
+serde = { version = "1.0.193", features = ["derive"] }
+service = { path = "service" }
+thiserror = "1.0.51"

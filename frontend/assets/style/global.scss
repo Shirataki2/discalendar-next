@@ -1,0 +1,21 @@
+.v-btn {
+  text-transform: unset !important;
+}
+
+.v-theme--customDarkTheme {
+  .v-main {
+    // gradient background
+    background: linear-gradient(0deg, #1e1e1e54 0%, #1c4e6339 100%) !important;
+  }
+}
+
+.v-theme--customLightTheme {
+  .v-main {
+    // gradient background
+    background: linear-gradient(0deg, #ffffff54 0%, #c0dbea11 100%) !important;
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}

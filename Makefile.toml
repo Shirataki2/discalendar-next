@@ -1,0 +1,34 @@
+[config]
+skip_core_tasks = true
+
+[env.ENV]
+source = "${CARGO_MAKE_PROFILE}"
+default_value = "dev"
+mapping = { dev = "deve", prod = "prod", stag = "stag" }
+
+[tasks.generate-entity]
+script = """
+cd ./api
+sea generate entity -o entity/src/entities --with-serde both
+"""
+
+[tasks.ge]
+alias = "generate-entity"
+
+[tasks.migrate-new]
+script = """
+cd ./api
+sea migrate generate $1
+"""
+
+[tasks.mn]
+alias = "migrate-new"
+
+[tasks.migrate-up]
+script = """
+cd ./api
+sea migrate up
+"""
+
+[tasks.mu]
+alias = "migrate-up"

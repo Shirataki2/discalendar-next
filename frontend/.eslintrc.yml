@@ -1,0 +1,34 @@
+root: true
+env:
+  browser: true
+  es2022: true
+parserOptions:
+  ecmaVersion: 13
+  parser: '@typescript-eslint/parser'
+extends:
+  - eslint:recommended
+  - plugin:@typescript-eslint/recommended
+  - plugin:vue/vue3-recommended
+  - prettier
+plugins:
+  - unused-imports
+rules:
+  "@typescript-eslint/no-unused-vars": off
+  "no-undef": off
+  "vue/multi-word-component-names": off
+  "unused-imports/no-unused-imports": error
+  "unused-imports/no-unused-vars": [
+    error,
+    {
+      "vars": "all",
+      "varsIgnorePattern": "^_",
+      "args": "after-used",
+      "argsIgnorePattern": "^_"
+    }
+  ]
+  "no-console": "warn"
+overrides:
+  - files: ["*.vue", "*.ts", "*.js"]
+    rules:
+      "@typescript-eslint/explicit-function-return-type": "error"
+    excludedFiles: ["*.config.ts", "./stores/**.ts", "./composables/**.ts"]
